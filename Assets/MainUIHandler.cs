@@ -1,24 +1,25 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class MainUIHandler : MonoBehaviour
 {
-    public Text playerName;
     private Text highScoreText;
+    private string playerInput;
 
     private void Awake()
     {
         DataHandler.Instance.LoadHighScore();
+        playerInput = DataHandler.Instance.playerInput;
     }
 
     private void Start()
     {
         if (DataHandler.Instance != null)
         {
-            playerName.text = DataHandler.Instance.Input.text;
-            highScoreText.text = $"Score : {playerName.text} : {DataHandler.Instance.highScore}";
+            
+            int highScore = DataHandler.Instance.highScore;
+
+            highScoreText.text = $"Score : {playerInput} : {highScore}";
         }
     }
 }

@@ -11,11 +11,19 @@ using UnityEditor;
 public class MenuUIHandler : MonoBehaviour
 {
     public Text HighScoreText;
+    public static InputField playerInputField;
+
+    public string playerInput;
 
     private void Start()
     {
         DataHandler.Instance.LoadHighScore();
         HighScoreText.text = $"HighSoore: {DataHandler.Instance.highScore}";
+    }
+
+    public void SaveInputName()
+    {
+        playerInput = playerInputField.textComponent.text;
     }
 
     public void StartGame()
