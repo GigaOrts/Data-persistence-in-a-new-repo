@@ -237,6 +237,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14bc03a0ea4ed684d8fcd25d559ce557, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HighScoreText: {fileID: 357485960}
 --- !u!1 &97834410
 GameObject:
   m_ObjectHideFlags: 0
@@ -533,7 +534,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'HighScore: '
+  m_Text: 'High Score: '
 --- !u!222 &357485961
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -571,6 +572,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e77691d87bc30a54195684fbe618d076, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  highScore: 0
+  Input: {fileID: 779160404}
 --- !u!4 &371203578
 Transform:
   m_ObjectHideFlags: 0
@@ -655,7 +658,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Enter text...
+  m_Text: Enter Name...
 --- !u!222 &573657450
 CanvasRenderer:
   m_ObjectHideFlags: 0

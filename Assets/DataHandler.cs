@@ -6,8 +6,8 @@ public class DataHandler : MonoBehaviour
 {
     public static DataHandler Instance;
 
-    public InputField InputField;
-    private string PlayerNickname;
+    public int highScore;
+    public Text Input;
 
     private void Awake()
     {
@@ -26,17 +26,15 @@ public class DataHandler : MonoBehaviour
     [System.Serializable]
     class SaveData
     {
-        public string PlayerNickname;
-
+        public int highScore;
     }
 
     public void SaveHighScore()
     {
         SaveData data = new SaveData();
-        data.PlayerNickname = PlayerNickname;
+        data.highScore = highScore;
 
         string json = JsonUtility.ToJson(data);
-
         File.WriteAllText(Application.persistentDataPath + "/savedata.json", json);
     }
 
@@ -47,10 +45,9 @@ public class DataHandler : MonoBehaviour
         if (File.Exists(path))
         {
             string json = File.ReadAllText(path);
-
             SaveData data = JsonUtility.FromJson<SaveData>(json);
 
-            PlayerNickname = data.PlayerNickname;
+            highScore = data.highScore;
         }
     }
 }
